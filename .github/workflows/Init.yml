@@ -12,5 +12,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Run a one-line script
-        run: echo Hello, world!
+      - name: Get Labelsync from generator repository
+        run: wget https://github.com/semicolonDSM/github-label-generator/raw/main/bin/labelsync
+      
+      - name: Allow permissions for execute
+        run: chmod 755 labelsync
+        
+      - name: Initialize issue labels
+        run: ./labelsync init
