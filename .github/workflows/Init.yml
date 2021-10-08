@@ -21,4 +21,4 @@ jobs:
       - name: Initialize issue labels
         run: ./labelsync --init
         env:
-          REPO_NAME: ${{ github.event.repository.name }}
+          GITHUB_REPOSITORY: ${{ github.event.repository.name }}
